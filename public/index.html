@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="gpt-4o-mini 기반의 간단한 AI 챗봇" />
+    <title>모아 AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <div>
+            <h1>모아 AI</h1>
+            <p><span class="status-dot"></span> gpt-4o-mini와 대화 중</p>
+          </div>
+        </div>
+        <button id="clearButton" class="ghost-button" type="button" aria-label="대화 초기화">새 대화</button>
+      </header>
+
+      <section id="chat" class="chat" aria-live="polite" aria-label="대화 내용">
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">✦</div>
+          <h2>무엇을 함께 알아볼까요?</h2>
+          <p>질문, 아이디어 정리, 글쓰기까지 편하게 이야기해 보세요.</p>
+          <div class="suggestions">
+            <button type="button" data-prompt="오늘 할 일을 우선순위에 따라 정리하는 방법을 알려줘.">할 일 정리하기</button>
+            <button type="button" data-prompt="새로운 프로젝트 아이디어 3가지를 제안해 줘.">아이디어 얻기</button>
+            <button type="button" data-prompt="어려운 개념을 쉽게 설명하는 좋은 방법은 뭐야?">쉽게 설명하기</button>
+          </div>
+        </div>
+      </section>
+
+      <form id="chatForm" class="composer">
+        <label class="sr-only" for="messageInput">메시지</label>
+        <textarea id="messageInput" rows="1" maxlength="4000" placeholder="메시지를 입력하세요" required></textarea>
+        <button id="sendButton" class="send-button" type="submit" aria-label="메시지 보내기">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14-7-4 14-3-6-7-1Zm7 1 7-8"/></svg>
+        </button>
+        <p class="hint">Enter로 전송 · Shift + Enter로 줄바꿈</p>
+      </form>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
